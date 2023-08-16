@@ -1,5 +1,6 @@
 <?php
 
+use Nxu\PhpNanoClassParser\Analyzer\Analyses\Imports;
 use Nxu\PhpNanoClassParser\PhpClass;
 
 it('parses a Laravel 10 model', function () {
@@ -16,7 +17,7 @@ it('parses a Laravel 10 model', function () {
     $importData = $class->analyze()->imports();
 
     expect($importData)
-        ->toBeInstanceOf(\Nxu\PhpNanoClassParser\Analyzer\Analyses\Imports::class)
+        ->toBeInstanceOf(Imports::class)
         ->toHaveProperty('firstLine', $start)
         ->toHaveProperty('lastLine', $end)
         ->and($importData->imports)
@@ -45,7 +46,7 @@ it('parses a Filament 3 resource', function () {
     $importData = $class->analyze()->imports();
 
     expect($importData)
-        ->toBeInstanceOf(\Nxu\PhpNanoClassParser\Analyzer\Analyses\Imports::class)
+        ->toBeInstanceOf(Imports::class)
         ->toHaveProperty('firstLine', $start)
         ->toHaveProperty('lastLine', $end)
         ->and($importData->imports)

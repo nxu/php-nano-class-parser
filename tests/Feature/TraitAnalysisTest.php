@@ -1,5 +1,6 @@
 <?php
 
+use Nxu\PhpNanoClassParser\Analyzer\Analyses\Traits;
 use Nxu\PhpNanoClassParser\PhpClass;
 
 it('parses a Laravel 10 model', function () {
@@ -15,7 +16,7 @@ it('parses a Laravel 10 model', function () {
     $traitData = $class->analyze()->traits();
 
     expect($traitData)
-        ->toBeInstanceOf(\Nxu\PhpNanoClassParser\Analyzer\Analyses\Traits::class)
+        ->toBeInstanceOf(Traits::class)
         ->toHaveProperty('firstLine', $start)
         ->toHaveProperty('lastLine', $end)
         ->and($traitData->traits)

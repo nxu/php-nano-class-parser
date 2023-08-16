@@ -2,6 +2,7 @@
 
 namespace Nxu\PhpNanoClassParser\Analyzer;
 
+use Nxu\PhpNanoClassParser\Analyzer\Analyses\ClassDefinition;
 use Nxu\PhpNanoClassParser\Analyzer\Analyses\Imports;
 use Nxu\PhpNanoClassParser\Analyzer\Analyses\Traits;
 use Nxu\PhpNanoClassParser\PhpClass;
@@ -11,6 +12,11 @@ readonly class PhpClassAnalyzer
     public function __construct(
         private PhpClass $phpClass
     ) {
+    }
+
+    public function classDefinition(): ?ClassDefinition
+    {
+        return ClassDefinition::analyze($this->phpClass);
     }
 
     public function imports(): ?Imports
