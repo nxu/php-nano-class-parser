@@ -7,6 +7,9 @@
 This is a very simple package that helps you parse
 *some* information about *some* PHP files.
 
+[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://stand-with-ukraine.pp.ua)
+
+
 ## Philosophy
 The intended purpose of this package is to determine the presence
 and optionally the vertical position of some statements in a PHP file. This is
