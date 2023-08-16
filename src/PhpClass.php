@@ -2,6 +2,7 @@
 
 namespace Nxu\PhpNanoClassParser;
 
+use Nxu\PhpNanoClassParser\Analyzer\PhpClassAnalyzer;
 use PhpParser\Node\Stmt;
 use PhpParser\ParserFactory;
 
@@ -14,6 +15,15 @@ readonly class PhpClass
 
     }
 
+    public function analyze(): PhpClassAnalyzer
+    {
+        return new PhpClassAnalyzer($this);
+    }
+
+
+    /**
+     * @return Stmt[]
+     */
     public function getAst(): array
     {
         return $this->ast;
