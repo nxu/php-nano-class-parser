@@ -8,11 +8,10 @@ use PhpParser\ParserFactory;
 
 readonly class PhpClass
 {
-    public function __construct(
+    private function __construct(
         /** @var Stmt[] $ast */
         private array $ast,
     ) {
-
     }
 
     public function analyze(): PhpClassAnalyzer

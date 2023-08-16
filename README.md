@@ -1,5 +1,4 @@
 # 🏗️ php-nano-class-parser
-
 This is a very simple package that helps you parse
 *some* information about *some* PHP files.
 
