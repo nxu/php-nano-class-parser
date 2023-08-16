@@ -1,4 +1,9 @@
 # 🏗️ php-nano-class-parser
+
+[![tests](https://github.com/nxu/php-nano-class-parser/actions/workflows/tests.yml/badge.svg)](https://github.com/nxu/php-nano-class-parser/actions/workflows/tests.yml)
+[![phpstan](https://github.com/nxu/php-nano-class-parser/actions/workflows/phpstan.yml/badge.svg)](https://github.com/nxu/php-nano-class-parser/actions/workflows/phpstan.yml)
+
+
 This is a very simple package that helps you parse
 *some* information about *some* PHP files.
 
