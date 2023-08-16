@@ -20,6 +20,11 @@ readonly class PhpClassAnalyzer
         return ClassDefinition::analyze($this->phpClass);
     }
 
+    public function firstFunction(): ?FirstFunction
+    {
+        return FirstFunction::analyze($this->phpClass);
+    }
+
     public function imports(): ?Imports
     {
         return Imports::analyze($this->phpClass);
@@ -28,10 +33,5 @@ readonly class PhpClassAnalyzer
     public function traits(): ?Traits
     {
         return Traits::analyze($this->phpClass);
-    }
-
-    public function firstFunction(): ?FirstFunction
-    {
-        return FirstFunction::analyze($this->phpClass);
     }
 }
