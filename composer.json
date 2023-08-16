@@ -4,6 +4,7 @@
     "type": "library",
     "require": {
         "php": ">=8.2",
+        "ext-tokenizer": "*",
         "nikic/php-parser": "^4.17",
         "illuminate/collections": ">=10"
     },
