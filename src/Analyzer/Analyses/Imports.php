@@ -32,16 +32,17 @@ readonly class Imports implements Analysis
             return null;
         }
 
+        $imports = $uses
+            ->flatMap(fn (Use_ $useStatement) => collect($useStatement->uses)
+                ->map(fn (Stmt\UseUse $use) => $use->name->toString())
+                ->values()
+            )
+            ->toArray();
+
         return new self(
-            (int) ($uses->min(fn (Node $use) => $use->getStartLine())),
-            intval($uses->max(fn (Node $use) => $use->getEndLine())),
-            $uses
-                ->flatMap(
-                    fn (Use_ $useStatement) => collect($useStatement->uses)
-                        ->map(fn (Stmt\UseUse $use) => $use->name->toString())
-                        ->values()
-                )
-                ->toArray()
+            firstLine: $uses->min(fn (Node $use) => $use->getStartLine()),
+            lastLine: $uses->max(fn (Node $use) => $use->getEndLine()),
+            imports: $imports
         );
     }
 }

@@ -39,9 +39,9 @@ readonly class Traits implements Analysis
             ->toArray();
 
         return new self(
-            $uses->min(fn (TraitUse $use) => $use->getStartLine()),
-            $uses->max(fn (TraitUse $use) => $use->getEndLine()),
-            $traits,
+            firstLine: $uses->min(fn (TraitUse $use) => $use->getStartLine()),
+            lastLine: $uses->max(fn (TraitUse $use) => $use->getEndLine()),
+            traits: $traits,
         );
     }
 }

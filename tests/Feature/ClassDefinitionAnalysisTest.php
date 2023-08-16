@@ -11,7 +11,7 @@ it('parses a Laravel 10 model', function () {
         ->toHaveProperties([
             'firstLine' => 8,
             'lastLine' => 9,
-            'className' => 'Test'
+            'className' => 'Test',
         ]);
 });
 
@@ -23,7 +23,7 @@ it('parses a Filament 3 resource', function () {
         ->toHaveProperties([
             'firstLine' => 16,
             'lastLine' => 17,
-            'className' => 'TestResource'
+            'className' => 'TestResource',
         ]);
 });
 
@@ -35,6 +35,6 @@ it('handles empty class', function () {
         ->toHaveProperties([
             'firstLine' => 3,
             'lastLine' => 4,
-            'className' => 'FullyEmpty'
+            'className' => 'FullyEmpty',
         ]);
 });
