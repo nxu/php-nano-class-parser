@@ -1,0 +1,30 @@
+{
+    "name": "nxu/php-nano-class-parser",
+    "description": "A fully opinionated, extremely minimal, and very optimistic package to help add custom code to generated PHP classes.",
+    "type": "library",
+    "require": {
+        "nikic/php-parser": "^4.17"
+    },
+    "require-dev": {
+        "pestphp/pest": "^2.14",
+        "phpstan/phpstan": "^1.10",
+        "laravel/pint": "^1.11"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Nxu\\PhpNanoClassParser\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "nxu",
+            "email": "nxu@nxu.hu"
+        }
+    ],
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
