@@ -2,7 +2,7 @@
 
 [![tests](https://github.com/nxu/php-nano-class-parser/actions/workflows/tests.yml/badge.svg)](https://github.com/nxu/php-nano-class-parser/actions/workflows/tests.yml)
 [![phpstan](https://github.com/nxu/php-nano-class-parser/actions/workflows/phpstan.yml/badge.svg)](https://github.com/nxu/php-nano-class-parser/actions/workflows/phpstan.yml)
-
+[![Packagist Version (custom server)](https://img.shields.io/packagist/v/nxu/php-nano-class-parser)](https://packagist.org/packages/nxu/php-nano-class-parser)
 
 This is a very simple package that helps you parse
 *some* information about *some* PHP files.
