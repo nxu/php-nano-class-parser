@@ -21,5 +21,5 @@ uses(Tests\TestCase::class)
 
 function stub(string $filename): string
 {
-    return file_get_contents(__DIR__  . DIRECTORY_SEPARATOR . 'stubs/' . $filename);
+    return file_get_contents(__DIR__.DIRECTORY_SEPARATOR.'stubs/'.$filename);
 }

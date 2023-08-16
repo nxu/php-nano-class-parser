@@ -20,7 +20,6 @@ readonly class PhpClass
         return new PhpClassAnalyzer($this);
     }
 
-
     /**
      * @return Stmt[]
      */
