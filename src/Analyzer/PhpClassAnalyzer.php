@@ -3,6 +3,7 @@
 namespace Nxu\PhpNanoClassParser\Analyzer;
 
 use Nxu\PhpNanoClassParser\Analyzer\Analyses\ClassDefinition;
+use Nxu\PhpNanoClassParser\Analyzer\Analyses\ClassOutline;
 use Nxu\PhpNanoClassParser\Analyzer\Analyses\FirstFunction;
 use Nxu\PhpNanoClassParser\Analyzer\Analyses\Imports;
 use Nxu\PhpNanoClassParser\Analyzer\Analyses\Traits;
@@ -18,6 +19,11 @@ readonly class PhpClassAnalyzer
     public function classDefinition(): ?ClassDefinition
     {
         return ClassDefinition::analyze($this->phpClass);
+    }
+
+    public function classOutline(): ?ClassOutline
+    {
+        return ClassOutline::analyze($this->phpClass);
     }
 
     public function firstFunction(): ?FirstFunction

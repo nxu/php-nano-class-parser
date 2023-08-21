@@ -83,6 +83,7 @@ $imports->imports;
 $class = \Nxu\PhpNanoClassParser\PhpClass::parse('...PHP source code...');
 
 $class->analyze()->classDefinition();
+$class->analyze()->classOutline();
 $class->analyze()->firstFunction();
 $class->analyze()->traits();
 $class->analyze()->imports();
