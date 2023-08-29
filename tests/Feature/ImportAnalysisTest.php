@@ -38,7 +38,7 @@ it('parses a Filament 3 resource', function () {
         "Filament\Forms\Form",
         "Filament\Resources\Resource",
         "Filament\Tables",
-        "Filament\Tables\Table",
+        "Filament\Tables\Table as FilamentTable",
         "Illuminate\Database\Eloquent\Builder",
         "Illuminate\Database\Eloquent\SoftDeletingScope",
     ];

@@ -34,7 +34,15 @@ readonly class Imports implements Analysis
 
         $imports = $uses
             ->flatMap(fn (Use_ $useStatement) => collect($useStatement->uses)
-                ->map(fn (Stmt\UseUse $use) => $use->name->toString())
+                ->map(function (Stmt\UseUse $use): string {
+                    $name = $use->name->toString();
+
+                    if (! is_null($alias = $use->alias)) {
+                        $name .= " as $alias";
+                    }
+
+                    return $name;
+                })
                 ->values()
             )
             ->toArray();
