@@ -13,13 +13,12 @@ readonly class ClassDefinition implements Analysis
         public int $firstLine,
         public int $lastLine,
         public ?string $className,
-    ) {
-    }
+    ) {}
 
     public static function analyze(PhpClass $class): ?self
     {
         /** @var Class_|null $definition */
-        $definition = (new NodeFinder())->findFirstInstanceOf($class->getAst(), Class_::class);
+        $definition = (new NodeFinder)->findFirstInstanceOf($class->getAst(), Class_::class);
 
         if (is_null($definition)) {
             return null;

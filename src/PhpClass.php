@@ -11,8 +11,7 @@ readonly class PhpClass
     private function __construct(
         /** @var Stmt[] $ast */
         private array $ast,
-    ) {
-    }
+    ) {}
 
     public function analyze(): PhpClassAnalyzer
     {
@@ -30,7 +29,7 @@ readonly class PhpClass
     public static function parse(string $phpSource): ?self
     {
         $ast = (new ParserFactory)
-            ->create(ParserFactory::PREFER_PHP7)
+            ->createForHostVersion()
             ->parse($phpSource);
 
         if (is_null($ast)) {

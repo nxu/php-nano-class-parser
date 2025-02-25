@@ -5,11 +5,11 @@
     "require": {
         "php": ">=8.2",
         "ext-tokenizer": "*",
-        "nikic/php-parser": "^4.17",
+        "nikic/php-parser": "^v5.4.0",
         "illuminate/collections": ">=10"
     },
     "require-dev": {
-        "pestphp/pest": "^2.14",
+        "pestphp/pest": "^3.0",
         "phpstan/phpstan": "^1.10",
         "laravel/pint": "^1.11",
         "thecodingmachine/phpstan-strict-rules": "^1.0",

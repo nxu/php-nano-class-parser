@@ -14,13 +14,12 @@ class FirstFunction implements Analysis
         public int $firstLine,
         public int $lastLine,
         public string $functionName,
-    ) {
-    }
+    ) {}
 
     public static function analyze(PhpClass $class): ?self
     {
         /** @var Function_|null $definition */
-        $definition = (new NodeFinder())->findFirstInstanceOf($class->getAst(), ClassMethod::class);
+        $definition = (new NodeFinder)->findFirstInstanceOf($class->getAst(), ClassMethod::class);
 
         if (is_null($definition)) {
             return null;
