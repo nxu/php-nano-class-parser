@@ -6,7 +6,6 @@ use Illuminate\Support\Collection;
 use Nxu\PhpNanoClassParser\Analyzer\Analysis;
 use Nxu\PhpNanoClassParser\PhpClass;
 use PhpParser\Node;
-use PhpParser\Node\Stmt;
 use PhpParser\Node\Stmt\Use_;
 use PhpParser\NodeFinder;
 
@@ -18,12 +17,11 @@ readonly class Imports implements Analysis
 
         /** @var string[] $imports */
         public array $imports,
-    ) {
-    }
+    ) {}
 
     public static function analyze(PhpClass $class): ?self
     {
-        $uses = (new NodeFinder())->findInstanceOf($class->getAst(), Use_::class);
+        $uses = (new NodeFinder)->findInstanceOf($class->getAst(), Use_::class);
 
         /** @var Collection<int|string, Use_> $uses */
         $uses = collect($uses);
@@ -34,7 +32,7 @@ readonly class Imports implements Analysis
 
         $imports = $uses
             ->flatMap(fn (Use_ $useStatement) => collect($useStatement->uses)
-                ->map(function (Stmt\UseUse $use): string {
+                ->map(function (Node\UseItem $use): string {
                     $name = $use->name->toString();
 
                     if (! is_null($alias = $use->alias)) {

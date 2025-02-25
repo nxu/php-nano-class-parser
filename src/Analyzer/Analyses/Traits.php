@@ -17,12 +17,11 @@ readonly class Traits implements Analysis
 
         /** @var string[] $traits */
         public array $traits,
-    ) {
-    }
+    ) {}
 
     public static function analyze(PhpClass $class): ?self
     {
-        $uses = (new NodeFinder())->findInstanceOf($class->getAst(), TraitUse::class);
+        $uses = (new NodeFinder)->findInstanceOf($class->getAst(), TraitUse::class);
 
         /** @var Collection<int|string, TraitUse> $uses */
         $uses = collect($uses);
